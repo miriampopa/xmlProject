@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Digital Library -->
+<library>
+    <books>
+        <book id="book1">
+            <publisher>River Publishers</publisher>
+            <title>Applied Data Analytics</title>
+            <authors>
+                <id>author_1</id>
+            </authors>
+            <copyright_year>2019</copyright_year>
+            <subject>Signal Processing and Analysis</subject>
+            <isbn>97887707342958</isbn>
+            <price>100</price>
+            <chapters_and_sections>
+                <section>
+                    <name>Applied Data Analytics</name>
+                    <pages>32</pages>
+                </section>
+                <chapter>
+                    <name>Markov Chain and its Applications</name>
+                    <pages>1-16</pages>
+                    <number>1</number>
+                </chapter>
+                <chapter>
+                    <name>Hidden Markov Modelling (HMM)</name>
+                    <pages>17-34</pages>
+                    <number>2</number>
+                </chapter>
+                <chapter>
+                    <name>Introduction to Kalman Filters</name>
+                    <pages>35-58</pages>
+                    <number>3</number>
+                </chapter>
+                <chapter>
+                    <name>Kalman Filter II</name>
+                    <pages>59-74</pages>
+                    <number>4</number>
+                </chapter>
+                <chapter>
+                    <name>Genetic Algorithm</name>
+                    <pages>75-92</pages>
+                    <number>5</number>
+                </chapter>
+                <chapter>
+                    <name>Calculus on Computational Graphs</name>
+                    <pages>93-104</pages>
+                    <number>6</number>
+                </chapter>
+                <chapter>
+                    <name>Support Vector Machines</name>
+                    <pages>105-138</pages>
+                    <number>7</number>
+                </chapter>
+                <chapter>
+                    <name>Artificial Neural Networks</name>
+                    <pages>139-152</pages>
+                    <number>8</number>
+                </chapter>
+                <chapter>
+                    <name>Training of Neural Networks</name>
+                    <pages>153-170</pages>
+                    <number>9</number>
+                </chapter>
+                <chapter>
+                    <name>Recurrent Neural Networks</name>
+                    <pages>171-184</pages>
+                    <number>10</number>
+                </chapter>
+                <chapter>
+                    <name>Convolutional Neural Networks</name>
+                    <pages>185-204</pages>
+                    <number>11</number>
+                </chapter>
+                <chapter>
+                    <name>Principal Component Analysis</name>
+                    <pages>205-220</pages>
+                    <number>12</number>
+                </chapter>
+                <chapter>
+                    <name>Moment-Generating Functions</name>
+                    <pages>221-238</pages>
+                    <number>13</number>
+                </chapter>
+                <chapter>
+                    <name>Characteristic Functions</name>
+                    <pages>239-242</pages>
+                    <number>14</number>
+                </chapter>
+                <chapter>
+                    <name>Probability-Generating Functions</name>
+                    <pages>243-258</pages>
+                    <number>15</number>
+                </chapter>
+                <chapter>
+                    <name>Digital Identity Management System Using Artificial Neural Networks</name>
+                    <pages>259-276</pages>
+                    <number>16</number>
+                </chapter>
+                <chapter>
+                    <name>Probabilistic Neural Network Classifiers for IoT Data Classification</name>
+                    <pages>277-290</pages>
+                    <number>17</number>
+                </chapter>
+                <chapter>
+                    <name>MML Learning and Inference of Hierarchical Probabilistic Finite State Machines</name>
+                    <pages>291-326</pages>
+                    <number>18</number>
+                </chapter>
+                <section>
+                    <name>Solution to Exercises</name>
+                    <pages>327-328</pages>
+                </section>
+                <section>
+                    <name>Index</name>
+                    <pages>329-334</pages>
+                </section>
+                <section>
+                    <name>About the Author</name>
+                    <pages>335-336</pages>
+                </section>
+            </chapters_and_sections>
+        </book>
+        <book id="book2">
+            <publisher>Wiley-IEEE Press</publisher>
+            <title>Cele cinci limbaje ale iubirii</title>
+            <authors>
+                <id>author_9</id>
+                <coauthors>
+                    <id>author_10</id>
+                    <id>author_12</id>
+                </coauthors>
+            </authors>
+            <copyright_year>2015</copyright_year>
+            <subject>Relationship</subject>
+            <isbn>6780470922343</isbn>
+            <price>40.56</price>
+            <chapters_and_sections>
+                <section>
+                    <name>Introduction</name>
+                    <pages>1-10</pages>
+                </section>
+                <chapter>
+                    <name>First language</name>
+                    <pages>11-14</pages>
+                    <number>1</number>
+                </chapter>
+                <chapter>
+                    <name>Second language</name>
+                    <pages>17-50</pages>
+                    <number>2</number>
+                </chapter>
+                <chapter>
+                    <name>Third language</name>
+                    <pages>50-112</pages>
+                    <number>3</number>
+                </chapter>
+                <chapter>
+                    <name>Fourth language</name>
+                    <pages>113-156</pages>
+                    <number>4</number>
+                </chapter>
+                <chapter>
+                    <name>Fifth language</name>
+                    <pages>180-210</pages>
+                    <number>5</number>
+                </chapter>
+            </chapters_and_sections>
+        </book>
+        <book id="book3">
+            <publisher>Wiley-IEEE Press</publisher>
+            <title>The Dark Side of Software Engineering</title>
+            <authors>
+                <id>author_2</id>
+                <coauthors>
+                    <id>author_3</id>
+                    <id>author_2</id>
+                    <id>author_4</id>
+                </coauthors>
+            </authors>
+            <copyright_year>2011</copyright_year>
+            <subject>Computing and Processing</subject>
+            <isbn>978041222873</isbn>
+            <price>89.23</price>
+            <chapters_and_sections>
+                <section>
+                    <name>Frontmatter</name>
+                    <pages>1-10</pages>
+                </section>
+                <chapter>
+                    <name>Introduction</name>
+                    <pages>11-14</pages>
+                    <number>1</number>
+                </chapter>
+                <chapter>
+                    <name>Subversion</name>
+                    <pages>15-80</pages>
+                    <number>2</number>
+                </chapter>
+                <chapter>
+                    <name>Lying</name>
+                    <pages>81-112</pages>
+                    <number>3</number>
+                </chapter>
+                <chapter>
+                    <name>Hacking</name>
+                    <pages>113-156</pages>
+                    <number>4</number>
+                </chapter>
+                <chapter>
+                    <name>Theft of Information</name>
+                    <pages>157-173</pages>
+                    <number>5</number>
+                </chapter>
+                <chapter>
+                    <name>Espionage</name>
+                    <pages>175-187</pages>
+                    <number>6</number>
+                </chapter>
+                <chapter>
+                    <name>Disgruntled Employees and Sabotage</name>
+                    <pages>189-212</pages>
+                    <number>7</number>
+                </chapter>
+                <chapter>
+                    <name>Whistle-Blowing</name>
+                    <pages>213-242</pages>
+                    <number>8</number>
+                </chapter>
+                <chapter>
+                    <name>Part Introduction</name>
+                    <pages>243-244</pages>
+                    <number>9</number>
+                </chapter>
+                <chapter>
+                    <name>Opinions, Predictions, and Beliefs</name>
+                    <pages>245-245</pages>
+                    <number>10</number>
+                </chapter>
+                <chapter>
+                    <name>Automated Crime</name>
+                    <pages>246-257</pages>
+                    <number>11</number>
+                </chapter>
+                <chapter>
+                    <name>Let's Play Make Believe</name>
+                    <pages>258-260</pages>
+                    <number>12</number>
+                </chapter>
+                <chapter>
+                    <name>Dark, Light, or Just Another Shade of Grey?</name>
+                    <pages>261-263</pages>
+                    <number>13</number>
+                </chapter>
+                <chapter>
+                    <name>Rational Software Developers as Pathological Code Hackers</name>
+                    <pages>264-267</pages>
+                    <number>14</number>
+                </chapter>
+                <chapter>
+                    <name>Personal Anecdotes</name>
+                    <pages>269-269</pages>
+                    <number>15</number>
+                </chapter>
+                <chapter>
+                    <name>An Officer and a Gentleman Confronts the Dark Side</name>
+                    <pages>270-272</pages>
+                    <number>16</number>
+                </chapter>
+                <chapter>
+                    <name>Less Carrot and More Stick</name>
+                    <pages>273-275</pages>
+                    <number>17</number>
+                </chapter>
+                <chapter>
+                    <name>Them and Us: Dispatches from the Virtual Software Team Trenches</name>
+                    <pages>276-280</pages>
+                    <number>18</number>
+                </chapter>
+                <chapter>
+                    <name>What is it to Lie on a Software Project?</name>
+                    <pages>281-283</pages>
+                    <number>19</number>
+                </chapter>
+                <chapter>
+                    <name>Merciless Control Instrument and the Mysterious Missing Fax</name>
+                    <pages>284-288</pages>
+                    <number>20</number>
+                </chapter>
+                <chapter>
+                    <name>Forest of Arden</name>
+                    <pages>289-291</pages>
+                    <number>21</number>
+                </chapter>
+                <chapter>
+                    <name>Hard-Headed Hardware Hit Man</name>
+                    <pages>292-293</pages>
+                    <number>22</number>
+                </chapter>
+                <chapter>
+                    <name>A Lighthearted Anecdote</name>
+                    <pages>294-297</pages>
+                    <number>22</number>
+                </chapter>
+                <section>
+                    <name>Conclusions</name>
+                    <pages_section>299-301</pages_section>
+                </section>
+                <section>
+                    <name>Index</name>
+                    <pages>303-305</pages>
+                </section>
+            </chapters_and_sections>
+        </book>
+        <book id="book4">
+            <publisher>Wiley-IEEE Press</publisher>
+            <title>Arta Subtila a Nepasarii</title>
+            <authors>
+                <id>author_1</id>
+                <coauthors>
+                    <id>author_5</id>
+                    <id>author_2</id>
+                </coauthors>
+            </authors>
+            <copyright_year>2010</copyright_year>
+            <subject>Life</subject>
+            <isbn>9780470922873</isbn>
+            <price>40.28</price>
+            <chapters_and_sections>
+                <section>
+                    <name>Introduction</name>
+                    <pages>1-10</pages>
+                </section>
+                <chapter>
+                    <name>Kepp you calm</name>
+                    <pages>11-14</pages>
+                </chapter>
+                <chapter>
+                    <name>Relationships</name>
+                    <pages>17-80</pages>
+                    <number>1</number>
+                </chapter>
+                <chapter>
+                    <name>Lying</name>
+                    <pages>81-112</pages>
+                    <number>2</number>
+                </chapter>
+                <chapter>
+                    <name>Work</name>
+                    <pages>113-156</pages>
+                    <number>3</number>
+                </chapter>
+            </chapters_and_sections>
+        </book>
+
+    </books>
+    <author_list>
+        <author_data>
+            <id>author_1</id>
+            <author_name>Johnson I. Agbinya</author_name>
+        </author_data>
+        <author_data>
+            <id>author_2</id>
+            <author_name>Jeff Keller</author_name>
+        </author_data>
+        <author_data>
+            <id>author_3</id>
+            <author_name>Robert L. Glass</author_name>
+        </author_data>
+        <author_data>
+            <id>author_4</id>
+            <author_name>Markus Zusak</author_name>
+        </author_data>
+        <author_data>
+            <id>author_5</id>
+            <author_name>Coolen Hover</author_name>
+        </author_data>
+        <author_data>
+            <id>author_6</id>
+            <author_name>Eric Wing Kuen See-To</author_name>
+        </author_data>
+        <author_data>
+            <id>author_7</id>
+            <author_name>J. Christopher Westland</author_name>
+        </author_data>
+        <author_data>
+            <id>author_8</id>
+            <author_name>Daniel Goleman</author_name>
+        </author_data>
+
+        <author_data>
+            <id>author_9</id>
+            <author_name>Matt Haig</author_name>
+        </author_data>
+        <author_data>
+            <id>author_10</id>
+            <author_name>Shelle Rose Charvet</author_name>
+        </author_data>
+        <author_data>
+            <id>author_11</id>
+            <author_name>Paullina Simons</author_name>
+        </author_data>
+
+        <author_data>
+            <id>author_12</id>
+            <author_name>Mark Manson</author_name>
+        </author_data>
+
+        <author_data>
+            <id>author_13</id>
+            <author_name>Joe Dispenza</author_name>
+        </author_data>
+
+        <author_data>
+            <id>author_14</id>
+            <author_name>Richard C. M. Yam</author_name>
+        </author_data>
+
+        <author_data>
+            <id>author_15</id>
+            <author_name>Antonio K. W. Lau</author_name>
+        </author_data>
+        <author_data>
+            <id>author_16</id>
+            <author_name>Gary Chapman</author_name>
+        </author_data>
+    </author_list>
+</library>
