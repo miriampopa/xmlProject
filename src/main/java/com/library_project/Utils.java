@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.library_project;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
@@ -11,7 +11,7 @@ import org.apache.camel.main.Main;
 
 public class Utils {
 
-    public static final String FILE = "C:\\Users\\Miriam\\Desktop\\XML\\demo\\src\\main\\resources\\library.xml";
+    public static final String FILE = "C:\\Users\\Miriam\\Desktop\\XML\\xml_project\\xml_project\\src\\main\\resources\\library.xml";
 
     public void withXSLT() throws Exception {
         final CamelContext camelContext = new DefaultCamelContext();
@@ -38,7 +38,7 @@ public class Utils {
         @Override
         public void configure() throws Exception {
             from("direct:start")
-                    .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\demo\\src\\main\\java\\com\\example\\demo\\xsl_library.xsl")
+                    .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\xml_project\\xml_project\\src\\main\\java\\com\\library_project\\xsl_library.xsl")
                     .to("stream:out");
         }
 
