@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Spring Boot ajax example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <style>
+        .navbar-header{
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header" >
+            Library
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="min-height: 500px">
+
+    <div class="starter-template">
+        <h1>Library site</h1>
+
+        <div id="feedback"></div>
+
+        <form class="form-horizontal" id="search-form">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Username:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="username"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="bth-search"
+                            class="btn btn-primary btn-lg">Search
+                    </button>
+                </div>
+            </div>
+        </form>
+
+
+        <form class="form-horizontal" id="search-form-book">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Book Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="bookTitle"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="bth-search-book"
+                            class="btn btn-primary btn-lg">Search
+                    </button>
+                </div>
+            </div>
+        </form>
+
+
+        <form class="form-horizontal" id="search-form-book-titles-that-start-with">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Book Title start with:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="bookTitlesThatStartWith"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="bth-search-book-titles-that-start-with"
+                            class="btn btn-primary btn-lg">Search
+                    </button>
+                </div>
+            </div>
+        </form>
+
+
+        <form class="form-horizontal" id="search-form-authors">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Authors</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="The request body is not required just click search" id="authors"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="bth-search-authors"
+                            class="btn btn-primary btn-lg">Search
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <form class="form-horizontal" id="search-form-authors-filtered-by-copyrightYear">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Copyright year:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control"  placeholder="The request body should be a json as: { publisher : Wiley-IEEE Press, authorName : Richard }" id="authorsFilteredByCopyrightYear"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="bth-search-authors-filtered-by-copyrightYear"
+                            class="btn btn-primary btn-lg">Search
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <form class="form-horizontal" id="search-form-authors-filtered-by-publisher-and-name">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Publisher and author name filters:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="authorsFilteredByPublisherAndName"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="bth-search-authors-filtered-by-publisher-and-name"
+                            class="btn btn-primary btn-lg">Search
+                    </button>
+                </div>
+            </div>
+        </form>
+
+
+
+        <form class="form-horizontal" id="create-form-booked-book">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Booked book json:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="bookedBook"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="bth-create-booked-book"
+                            class="btn btn-primary btn-lg">Search
+                    </button>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+
+</div>
+
+<div class="container">
+    <footer>
+        <p>
+            Library
+        </p>
+    </footer>
+</div>
+
+<script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

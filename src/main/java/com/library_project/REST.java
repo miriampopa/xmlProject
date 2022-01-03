@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.library_project;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
@@ -34,7 +34,7 @@ public class REST extends RouteBuilder {
                 .produces(TEXT_HTML)
                 .route()
                 .process(PROCESSOR)
-                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\demo\\src\\main\\java\\com\\example\\demo\\NewStylesheet.xsl");
+                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\xml_project\\xml_project\\src\\main\\java\\com\\library_project\\NewStylesheet.xsl");
 
         // 2nd.request
         //http://localhost:1234/tema/booksCopyright/2010
@@ -42,7 +42,7 @@ public class REST extends RouteBuilder {
                 .produces(TEXT_HTML)
                 .route()
                 .process(PROCESSOR)
-                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\demo\\src\\main\\java\\com\\example\\demo\\NewStylesheet1.xsl");
+                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\xml_project\\xml_project\\src\\main\\java\\com\\library_project\\NewStylesheet1.xsl");
 
         // 3th.request
         // http://localhost:1234/tema/booksStartWithA
@@ -50,7 +50,7 @@ public class REST extends RouteBuilder {
                 .produces(TEXT_HTML)
                 .route()
                 .process(PROCESSOR)
-                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\demo\\src\\main\\java\\com\\example\\demo\\NewStylesheet2.xsl");
+                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\xml_project\\xml_project\\src\\main\\java\\com\\library_project\\NewStylesheet2.xsl");
 
         // 4th.request
         // http://localhost:1234/tema/booksContainsWord/Arta
@@ -58,7 +58,7 @@ public class REST extends RouteBuilder {
                 .produces(TEXT_HTML)
                 .route()
                 .process(PROCESSOR)
-                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\demo\\src\\main\\java\\com\\example\\demo\\NewStylesheet3.xsl");
+                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\xml_project\\xml_project\\src\\main\\java\\com\\library_project\\NewStylesheet3.xsl");
 
         // 5.request
         // http://localhost:1234/tema/chapterNumber
@@ -66,7 +66,7 @@ public class REST extends RouteBuilder {
                 .produces(TEXT_HTML)
                 .route()
                 .process(PROCESSOR)
-                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\demo\\src\\main\\java\\com\\example\\demo\\NewStylesheet4.xsl");
+                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\xml_project\\xml_project\\src\\main\\java\\com\\library_project\\NewStylesheet4.xsl");
 
         // 6 request.
         // http://localhost:1234/tema/authorName/Jeff%20Keller
@@ -74,6 +74,6 @@ public class REST extends RouteBuilder {
                 .produces(TEXT_HTML)
                 .route()
                 .process(PROCESSOR)
-                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\demo\\src\\main\\java\\com\\example\\demo\\NewStylesheet5.xsl");
+                .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\xml_project\\xml_project\\src\\main\\java\\com\\library_project\\NewStylesheet5.xsl");
     }
 }

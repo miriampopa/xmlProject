@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Digital Library -->
-<library>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Digital Library --><library>
     <books>
         <book id="book1">
             <publisher>River Publishers</publisher>
@@ -361,7 +359,7 @@
         </author_data>
         <author_data>
             <id>author_2</id>
-            <author_name>Jeff Keller</author_name>
+            <author_name>Jeff Richard Keller</author_name>
         </author_data>
         <author_data>
             <id>author_3</id>
@@ -369,7 +367,7 @@
         </author_data>
         <author_data>
             <id>author_4</id>
-            <author_name>Markus Zusak</author_name>
+            <author_name>Markus  Richard Zusak</author_name>
         </author_data>
         <author_data>
             <id>author_5</id>
@@ -422,7 +420,17 @@
         </author_data>
         <author_data>
             <id>author_16</id>
-            <author_name>Gary Chapman</author_name>
+            <author_name>Gary Chapman Richard</author_name>
         </author_data>
     </author_list>
+    <booked_book_list>
+        <booked_book>
+            <title>Cele cinci limbaje ale iubirii</title>
+            <user_id>user_2</user_id>
+        </booked_book>
+        <booked_book>
+            <title>Cele cinci limbaje ale iubirii</title>
+            <user_id>user_3</user_id>
+        </booked_book>
+    <booked_book><user_id>user_4</user_id><title>Cele cinci limbaje ale iubirii</title></booked_book><booked_book><user_id>user_5</user_id><title>Cele cinci limbaje ale iubirii</title></booked_book></booked_book_list>
 </library>
