@@ -1,5 +1,6 @@
 package com.library_project.services;
 
+import com.library_project.Utils;
 import com.library_project.model.*;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
@@ -27,7 +28,7 @@ public class AuthorService {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList authorList = doc.getElementsByTagName("author_data");
 
 
@@ -66,7 +67,7 @@ public class AuthorService {
         Author authorObj = new Author();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList authorList = doc.getElementsByTagName("author_data");
 
             for (int i = 0; i < authorList.getLength(); i++) {
@@ -112,7 +113,7 @@ public class AuthorService {
         Author authorObj = new Author();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList authorList = doc.getElementsByTagName("author_data");
 
             for (int i = 0; i < authorList.getLength(); i++) {
@@ -156,7 +157,7 @@ public class AuthorService {
         String id = "";
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList authorList = doc.getElementsByTagName("author_data");
 
             for (int i = 0; i < authorList.getLength(); i++) {
@@ -199,7 +200,7 @@ public class AuthorService {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList booksList = doc.getElementsByTagName("book");
             int copyrightYear;
             for (int i = 0; i < booksList.getLength(); i++) {
@@ -264,7 +265,7 @@ public class AuthorService {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList booksList = doc.getElementsByTagName("book");
             String publisher;
             for (int i = 0; i < booksList.getLength(); i++) {

@@ -5,7 +5,7 @@
         <p>Year: <xsl:value-of select="$year"/></p>
 
         <p>Books that were not published on <xsl:value-of select="$year"/></p>
-        <xsl:for-each select="//book[not(contains(copyright_year,$year))]">
+        <xsl:for-each select="//book[(contains(copyright_year,$year))]">
             <div style="background-color:teal;color:white;padding:4px">
                 <span style="font-weight:bold">Title - </span>
                 <xsl:element name="book">

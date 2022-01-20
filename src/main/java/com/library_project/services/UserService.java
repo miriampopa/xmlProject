@@ -2,6 +2,7 @@ package com.library_project.services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.library_project.Utils;
 import com.library_project.model.User;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
@@ -85,7 +86,7 @@ public class UserService {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project\\xml_project\\src\\main\\resources\\user.xml");
+            Document doc = builder.parse(Utils.RESOURCES_FOLDER + "\\user.xml");
             NodeList books = doc.getElementsByTagName("user_data");
             String infoMessage;
             for (int i = 0; i < books.getLength(); i++) {

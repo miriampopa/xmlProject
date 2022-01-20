@@ -11,12 +11,15 @@ import org.apache.camel.main.Main;
 
 public class Utils {
 
-    public static final String FILE = "C:\\Users\\Miriam\\Desktop\\XML\\xml_project\\xml_project\\src\\main\\resources\\library.xml";
+    public static final String PROJECT_MAIN_FOLDER = "C:\\Users\\marin\\Projects\\xml\\xmlProject\\src\\main";
+    public static final String RESOURCES_FOLDER = PROJECT_MAIN_FOLDER + "\\resources";
+    public static final String LIBRARY_XML_PATH = RESOURCES_FOLDER + "\\library.xml";
+    public static final String PROJECT_FOLDER   = PROJECT_MAIN_FOLDER + "\\java\\com\\library_project";
 
     public void withXSLT() throws Exception {
         final CamelContext camelContext = new DefaultCamelContext();
 
-        try(final InputStream is = new FileInputStream(FILE)) {
+        try(final InputStream is = new FileInputStream(RESOURCES_FOLDER + "\\library.xml")) {
             camelContext.start();
             camelContext.addRoutes(new XSLTRoute());
 
@@ -38,7 +41,7 @@ public class Utils {
         @Override
         public void configure() throws Exception {
             from("direct:start")
-                    .to("xslt:file:C:\\Users\\Miriam\\Desktop\\XML\\xml_project\\xml_project\\src\\main\\java\\com\\library_project\\xsl_library.xsl")
+                    .to("xslt:file:" + Utils.PROJECT_FOLDER + "\\xsl_library.xsl")
                     .to("stream:out");
         }
 

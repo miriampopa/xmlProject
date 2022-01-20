@@ -1,7 +1,7 @@
 package com.library_project.services;
 
+import com.library_project.Utils;
 import com.library_project.model.*;
-import com.sun.org.apache.xerces.internal.dom.DeepNodeListImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
@@ -66,7 +66,7 @@ public class BookService {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList booksList = doc.getElementsByTagName("book");
             String infoMessage;
             for (int i = 0; i < booksList.getLength(); i++) {
@@ -135,7 +135,7 @@ public class BookService {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList booksList = doc.getElementsByTagName("book");
             String infoMessage;
             for (int i = 0; i < booksList.getLength(); i++) {
@@ -208,7 +208,7 @@ public class BookService {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList booksList = doc.getElementsByTagName("book");
             String infoMessage;
             for (int i = 0; i < booksList.getLength(); i++) {
@@ -258,7 +258,7 @@ public class BookService {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList booksList = doc.getElementsByTagName("book");
             String infoMessage;
             for (int i = 0; i < booksList.getLength(); i++) {
@@ -344,7 +344,7 @@ public class BookService {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList booksList = doc.getElementsByTagName("book");
 
             //we go through all list because can be possible to have different books with th same title
@@ -540,7 +540,7 @@ public class BookService {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList booksList = doc.getElementsByTagName("booked_book");
             String infoMessage;
             for (int i = 0; i < booksList.getLength(); i++) {
@@ -582,7 +582,7 @@ public class BookService {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
             NodeList books = doc.getElementsByTagName("booked_book");
 
             Element root = doc.getDocumentElement();
@@ -604,7 +604,7 @@ public class BookService {
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
-            StreamResult result = new StreamResult("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\library.xml");
+            StreamResult result = new StreamResult(Utils.LIBRARY_XML_PATH);
             transformer.transform(source, result);
 
 

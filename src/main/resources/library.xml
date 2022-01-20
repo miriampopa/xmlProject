@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Digital Library --><library>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Digital Library -->
+<library>
     <books>
         <book id="book1">
             <publisher>River Publishers</publisher>
