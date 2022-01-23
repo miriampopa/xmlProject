@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Digital Library -->
-<library>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Digital Library --><library>
     <books>
         <book id="book1">
             <publisher>River Publishers</publisher>
@@ -425,13 +425,25 @@
         </author_data>
     </author_list>
     <booked_book_list>
-        <booked_book>
-            <title>Cele cinci limbaje ale iubirii</title>
-            <user_id>user_2</user_id>
-        </booked_book>
-        <booked_book>
-            <title>Cele cinci limbaje ale iubirii</title>
-            <user_id>user_3</user_id>
-        </booked_book>
-    <booked_book><user_id>user_4</user_id><title>Cele cinci limbaje ale iubirii</title></booked_book><booked_book><user_id>user_5</user_id><title>Cele cinci limbaje ale iubirii</title></booked_book></booked_book_list>
+        
+        
+    
+
+<booked_book>
+<user_id>user_6</user_id>
+<title>Cele cinci limbaje ale iubirii</title>
+</booked_book>
+
+
+<booked_book>
+<user_id>user_8</user_id>
+<title>Cele cinci limbaje ale iubirii</title>
+</booked_book>
+<booked_book>
+<user_id>user_3</user_id>
+<title>Cele cinci limbaje ale iubirii</title>
+</booked_book>
+
+
+</booked_book_list>
 </library>

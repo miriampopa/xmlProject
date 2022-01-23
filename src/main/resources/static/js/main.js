@@ -46,6 +46,13 @@ $(document).ready(function () {
                             fire_ajax_create_booked_book_submit()
                         });
 
+    $("#delete-form-booked-book").submit(function (event) {
+                            event.preventDefault();
+
+                            fire_ajax_delete_booked_book_submit()
+                        });
+
+
 
     $("#search-form-user-wsdl").submit(function (event) {
                 event.preventDefault();
@@ -327,6 +334,43 @@ function fire_ajax_create_booked_book_submit() {
     }
 
 
+function fire_ajax_delete_booked_book_submit() {
+
+        var search = {}
+        search["deletedBookedBook"] = $("#deletedBookedBook").val();
+
+        $("#bth-delete-booked-book").prop("disabled", true);
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/api/delete-booked-book",
+            data: JSON.stringify(search),
+            dataType: 'json',
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+
+                var json = "<h4>Ajax Response</h4><pre>"
+                    + JSON.stringify(data, null, 4) + "</pre>";
+                $('#feedback').html(json);
+
+                console.log("SUCCESS : ", data);
+                $("#bth-delete-booked-book").prop("disabled", false);
+
+            },
+            error: function (e) {
+
+                var json = "<h4>Ajax Response</h4><pre>"
+                    + e.responseText + "</pre>";
+                $('#feedback').html(json);
+
+                console.log("ERROR : ", e);
+                $("#bth-delete-booked-book").prop("disabled", false);
+
+            }
+        });
+    }
 
 
 

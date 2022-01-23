@@ -201,7 +201,7 @@ public class SearchController {
 
     }
 
-
+    //e.g {"title": "Cele cinci limbaje ale iubirii","userId": "user_3"}
     // *********** booked book requests ***********
     @PostMapping("/api/add-booked-book")
     public ResponseEntity<?> getSearchResultViaAjax6Response(@Valid @RequestBody SearchCriteria search, Errors errors)  {
@@ -233,6 +233,47 @@ public class SearchController {
         } else {
             result.setMsg("success");
         }
+        result.setResult(bookedBooks.stream().collect(Collectors.toList()));
+
+        return ResponseEntity.ok(result);
+
+    }
+
+
+    // *********** booked book requests ***********
+    @PostMapping("/api/delete-booked-book")
+    public ResponseEntity<?> getSearchResultViaAjax7Response(@Valid @RequestBody SearchCriteria search, Errors errors)  {
+
+        AjaxResponseBody<BookedBook> result = new AjaxResponseBody();
+
+        //If error, just return a 400 bad request, along with the error message
+        if (errors.hasErrors()) {
+
+            result.setMsg(errors.getAllErrors().stream().map(x -> x.getDefaultMessage()).collect(Collectors.joining(",")));
+            return ResponseEntity.badRequest().body(result);
+        }
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        BookedBook bookedBook = null;
+        try {
+            bookedBook = objectMapper.readValue(search.getDeletedBookedBook(), BookedBook.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        bookService.deleteBookedBook(bookedBook);
+
+        List<BookedBook> bookedBooks = new ArrayList<>();
+
+        if (bookedBooks.isEmpty()) {
+            result.setMsg("success!");
+        } else {
+            result.setMsg("The book was not deleted");
+        }
+
+        bookedBooks.remove(bookedBook);
+
+
         result.setResult(bookedBooks.stream().collect(Collectors.toList()));
 
         return ResponseEntity.ok(result);

@@ -107,7 +107,7 @@
             <div class="form-group form-group-lg">
                 <label class="col-sm-2 control-label">Copyright year:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control"  placeholder="The request body should be a json as: { publisher : Wiley-IEEE Press, authorName : Richard }" id="authorsFilteredByCopyrightYear"/>
+                    <input type="text" class="form-control"  placeholder="The request body should be the year for copyRight value" id="authorsFilteredByCopyrightYear"/>
                 </div>
             </div>
 
@@ -124,7 +124,7 @@
             <div class="form-group form-group-lg">
                 <label class="col-sm-2 control-label">Publisher and author name filters:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="authorsFilteredByPublisherAndName"/>
+                    <input type="text" class="form-control" id="authorsFilteredByPublisherAndName" placeholder="The request body should be a json as: { publisher : Wiley-IEEE Press, authorName : Richard }" />
                 </div>
             </div>
 
@@ -143,13 +143,31 @@
             <div class="form-group form-group-lg">
                 <label class="col-sm-2 control-label">Booked book json:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="bookedBook"/>
+                    <input type="text" class="form-control" id="bookedBook" placeholder="The request body should be a json as: {title: Cele cinci limbaje ale iubirii,userId: user_6}" />
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" id="bth-create-booked-book"
+                            class="btn btn-primary btn-lg">Search
+                    </button>
+                </div>
+            </div>
+        </form>
+
+
+        <form class="form-horizontal" id="delete-form-booked-book">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Booked book json to removed the booked book:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="deletedBookedBook" placeholder="The request body should be a json as: {title: Cele cinci limbaje ale iubirii,userId: user_6}"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="bth-delete-booked-book"
                             class="btn btn-primary btn-lg">Search
                     </button>
                 </div>

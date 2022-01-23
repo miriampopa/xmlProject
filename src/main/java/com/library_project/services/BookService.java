@@ -14,10 +14,7 @@ import javax.annotation.PostConstruct;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.IOException;
@@ -48,11 +45,11 @@ public class BookService {
         return getAllBooks();
     }
 
-    public List<BookChaptersModel>getBookThatStartWith(String booksTitleStartWith) {
+    public List<BookChaptersModel> getBookThatStartWith(String booksTitleStartWith) {
         return getChaptersForBooksThatStartWith().stream()
-                        .filter(x -> x.getTitle()
+                .filter(x -> x.getTitle()
                         .startsWith(booksTitleStartWith))
-                        .collect(Collectors.toList());
+                .collect(Collectors.toList());
     }
 
     @PostConstruct
@@ -559,8 +556,8 @@ public class BookService {
                             if (info.getTagName().equalsIgnoreCase("title"))
                                 bookObj.setTitle(info.getTextContent());
 
-                            }
                         }
+                    }
 
                 }
                 books.add(bookObj);
@@ -576,9 +573,7 @@ public class BookService {
     }
 
 
-
-
-    public void addBook(BookedBook  book) {
+    public void addBook(BookedBook book) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -623,5 +618,107 @@ public class BookService {
             e.printStackTrace();
         }
     }
+
+    public void delete(String id) {
+        String xmlFile = Utils.LIBRARY_XML_PATH;
+        try {
+            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            Document document = documentBuilder.parse(xmlFile);
+            NodeList products = document.getElementsByTagName("booked_book");
+            for (int i = 0; i < products.getLength(); i++) {
+                Element product = (Element) products.item(i);
+                Element idTag = (Element) product.getElementsByTagName("title").item(0);
+                if (idTag.getTextContent().equalsIgnoreCase(id)) {
+                    idTag.getParentNode().getParentNode().removeChild(products.item(i));
+                    break;
+                }
+            }
+            saveXMLContent(document, xmlFile);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public void deleteBookedBook(BookedBook book ) {
+        String xmlFile = Utils.LIBRARY_XML_PATH;
+        try {
+            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            Document document = documentBuilder.parse(xmlFile);
+            NodeList products = document.getElementsByTagName("booked_book");
+            for (int i = 0; i < products.getLength(); i++) {
+                Element product = (Element) products.item(i);
+                Element titleTag = (Element) product.getElementsByTagName("title").item(0);
+                Element userId = (Element) product.getElementsByTagName("user_id").item(0);
+                if (titleTag.getTextContent().equalsIgnoreCase(book.getTitle()) && userId.getTextContent().equalsIgnoreCase(book.getUserId())) {
+                    titleTag.getParentNode().getParentNode().removeChild(products.item(i));
+                }
+            }
+            saveXMLContent(document, xmlFile);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+        private static void saveXMLContent(Document document, String xmlFile) {
+            try {
+                TransformerFactory transformerFactory = TransformerFactory.newInstance();
+                Transformer transformer = transformerFactory.newTransformer();
+                transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+                DOMSource domSource = new DOMSource(document);
+                StreamResult streamResult = new StreamResult(xmlFile);
+                transformer.transform(domSource, streamResult);
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+
+//    public List<Book> addBooks(Book book) {
+//        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+//        try {
+//            DocumentBuilder builder = factory.newDocumentBuilder();
+//            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
+//            NodeList books = doc.getElementsByTagName("book");
+//
+//            Element root = doc.getDocumentElement();
+//            NodeList rootElement = doc.getElementsByTagName("books");
+//
+//            Element newUser = rootElement.item(0).getFirstChild().getOwnerDocument().createElement("booked_book");
+//
+//            Element publisher = doc.createElement("publisher");
+//            publisher.appendChild(doc.createTextNode(book.getPublisher()));
+//            newUser.appendChild(publisher);
+//
+//            Element title = doc.createElement("title");
+//            title.appendChild(doc.createTextNode(book.getTitle()));
+//            newUser.appendChild(title);
+//
+//            rootElement.item(0).appendChild(newUser);
+//
+//            DOMSource source = new DOMSource(doc);
+//
+//            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+//            Transformer transformer = transformerFactory.newTransformer();
+//            StreamResult result = new StreamResult(Utils.LIBRARY_XML_PATH);
+//            transformer.transform(source, result);
+//
+//
+//        } catch (ParserConfigurationException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        } catch (SAXException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        } catch (TransformerConfigurationException e) {
+//            e.printStackTrace();
+//        } catch (TransformerException e) {
+//            e.printStackTrace();
+//        }
+//        return ""
+//    }
 
 }

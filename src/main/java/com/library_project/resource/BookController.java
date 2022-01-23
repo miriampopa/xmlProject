@@ -67,7 +67,7 @@ public class BookController {
     }
 
 
-    @ApiOperation(value = "Create bookedBook")
+    @ApiOperation(value = "Booked a book")
     @PostMapping("/bookedBook")
     public BookedBook create(@RequestBody BookedBook book) {
         bookService.addBook(book);
@@ -75,6 +75,19 @@ public class BookController {
     }
 
 
+    @ApiOperation(value = "Delete booked book by title")
+    @DeleteMapping("/bookedBook/{bookTitle}")
+    public void delete(@PathVariable("bookTitle") final String bookTitle) {
+        bookService.delete(bookTitle);
+    }
+
+    @ApiOperation(value = "Delete booked book by title and userId")
+    @DeleteMapping("/delete-bookedBook")
+    public void deleteBookedBook(@RequestBody BookedBook book) {
+        bookService.deleteBookedBook(book);
+    }
+
+    // should be removed
     @ApiOperation(value = "Returns the created book")
     @PostMapping("/createBook")
     public String createBook(@RequestBody final String hello) {

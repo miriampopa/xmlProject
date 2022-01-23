@@ -18,6 +18,7 @@ public class SearchCriteria {
     String authorsFilteredByPublisherAndName;
 
     String bookedBook;
+    String deletedBookedBook;
 
     public String getUsername() {
         return username;
@@ -71,5 +72,13 @@ public class SearchCriteria {
 
     public void setBookedBook(String bookedBook) {
         this.bookedBook = bookedBook;
+    }
+
+    public String getDeletedBookedBook() {
+        return deletedBookedBook;
+    }
+
+    public void setDeletedBookedBook(String deletedBookedBook) {
+        this.deletedBookedBook = deletedBookedBook;
     }
 }

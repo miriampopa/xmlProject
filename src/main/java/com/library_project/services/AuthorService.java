@@ -146,7 +146,15 @@ public class AuthorService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return authorObj;
+
+        if (authorObj.getName().equalsIgnoreCase(name))
+            return authorObj;
+        else {
+
+            Author a = new Author();
+            a.setName("Not found");
+            return a;
+        }
     }
 
 
