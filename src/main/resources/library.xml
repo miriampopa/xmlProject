@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Digital Library --><library>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Digital Library -->
+<library>
     <books>
         <book id="book1">
             <publisher>River Publishers</publisher>
@@ -118,6 +119,7 @@
                     <pages>335-336</pages>
                 </section>
             </chapters_and_sections>
+        </book>
         <book id="book2">
             <publisher>Wiley-IEEE Press</publisher>
             <title>Cele cinci limbaje ale iubirii</title>
