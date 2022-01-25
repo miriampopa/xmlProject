@@ -223,7 +223,7 @@ public class SearchController {
             e.printStackTrace();
         }
 
-        bookService.addBook(bookedBook);
+        bookService.addBookedBook(bookedBook);
 
         List<BookedBook> bookedBooks = new ArrayList<>();
         bookedBooks.add(bookedBook);

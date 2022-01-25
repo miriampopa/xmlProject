@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Digital Library --><library>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!-- Digital Library --><library>
     <books>
         <book id="book1">
             <publisher>River Publishers</publisher>
@@ -119,7 +118,6 @@
                     <pages>335-336</pages>
                 </section>
             </chapters_and_sections>
-        </book>
         <book id="book2">
             <publisher>Wiley-IEEE Press</publisher>
             <title>Cele cinci limbaje ale iubirii</title>
@@ -351,8 +349,8 @@
                 </chapter>
             </chapters_and_sections>
         </book>
-
     </books>
+
     <author_list>
         <author_data>
             <id>author_1</id>
@@ -368,7 +366,7 @@
         </author_data>
         <author_data>
             <id>author_4</id>
-            <author_name>Markus  Richard Zusak</author_name>
+            <author_name>Markus Richard Zusak</author_name>
         </author_data>
         <author_data>
             <id>author_5</id>
@@ -386,7 +384,6 @@
             <id>author_8</id>
             <author_name>Daniel Goleman</author_name>
         </author_data>
-
         <author_data>
             <id>author_9</id>
             <author_name>Matt Haig</author_name>
@@ -399,22 +396,18 @@
             <id>author_11</id>
             <author_name>Paullina Simons</author_name>
         </author_data>
-
         <author_data>
             <id>author_12</id>
             <author_name>Mark Manson</author_name>
         </author_data>
-
         <author_data>
             <id>author_13</id>
             <author_name>Joe Dispenza</author_name>
         </author_data>
-
         <author_data>
             <id>author_14</id>
             <author_name>Richard C. M. Yam</author_name>
         </author_data>
-
         <author_data>
             <id>author_15</id>
             <author_name>Antonio K. W. Lau</author_name>
@@ -423,27 +416,24 @@
             <id>author_16</id>
             <author_name>Gary Chapman Richard</author_name>
         </author_data>
+        <author_data>
+            <id>author_17</id>
+            <author_name>Yuval Noah Harari</author_name>
+        </author_data>
     </author_list>
+
     <booked_book_list>
-        
-        
-    
-
-<booked_book>
-<user_id>user_6</user_id>
-<title>Cele cinci limbaje ale iubirii</title>
-</booked_book>
-
-
-<booked_book>
-<user_id>user_8</user_id>
-<title>Cele cinci limbaje ale iubirii</title>
-</booked_book>
-<booked_book>
-<user_id>user_3</user_id>
-<title>Cele cinci limbaje ale iubirii</title>
-</booked_book>
-
-
-</booked_book_list>
+        <booked_book>
+            <user_id>user_6</user_id>
+            <title>Cele cinci limbaje ale iubirii</title>
+        </booked_book>
+        <booked_book>
+            <user_id>user_8</user_id>
+            <title>Cele cinci limbaje ale iubirii</title>
+        </booked_book>
+        <booked_book>
+            <user_id>user_3</user_id>
+            <title>Cele cinci limbaje ale iubirii</title>
+        </booked_book>
+    </booked_book_list>
 </library>

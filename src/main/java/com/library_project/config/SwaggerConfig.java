@@ -14,8 +14,6 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @EnableSwagger2
 @Configuration
 public class SwaggerConfig {
-
-
     @Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -27,7 +25,6 @@ public class SwaggerConfig {
     }
 
     private ApiInfo metaInfo() {
-
         ApiInfo apiInfo = new ApiInfo(
                 "Spring Boot Swagger Example API",
                 "Spring Boot Swagger",
@@ -37,7 +34,6 @@ public class SwaggerConfig {
                 "",
                 ""
         );
-
         return apiInfo;
     }
 }

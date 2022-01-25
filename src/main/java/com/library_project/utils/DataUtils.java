@@ -1,5 +1,6 @@
 package com.library_project.utils;
 
+import com.library_project.Utils;
 import com.library_project.model.User;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -27,7 +28,7 @@ public class DataUtils {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\user.xml");
+            Document doc = builder.parse(Utils.RESOURCES_FOLDER + "\\user.xml");
             NodeList books = doc.getElementsByTagName("user_data");
             String infoMessage;
             for (int i = 0; i < books.getLength(); i++) {
@@ -65,7 +66,7 @@ public class DataUtils {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\user.xml");
+            Document doc = builder.parse(Utils.RESOURCES_FOLDER + "\\user.xml");
             NodeList books = doc.getElementsByTagName("user_data");
 
             Element root = doc.getDocumentElement();
@@ -95,7 +96,7 @@ public class DataUtils {
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
-            StreamResult result = new StreamResult("C:\\Users\\Miriam\\Desktop\\XML\\xml_project-v6\\xml_project\\src\\main\\resources\\user.xml");
+            StreamResult result = new StreamResult(Utils.RESOURCES_FOLDER + "\\user.xml");
             transformer.transform(source, result);
 
 

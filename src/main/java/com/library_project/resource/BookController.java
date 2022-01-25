@@ -59,23 +59,27 @@ public class BookController {
         return bookService.getNumberOfSectionsForABookTitle(bookTitle);
     }
 
-
-    @ApiOperation(value = "Returns number of sections filtered by book title")
+    @ApiOperation(value = "Returns all books reserved by users")
     @GetMapping("/bookedBooks")
     public List<BookedBook> getAllBookedBooks() {
         return bookService.getAllBookedBooks();
     }
 
-
-    @ApiOperation(value = "Booked a book")
+    @ApiOperation(value = "Reserve a book for an user")
     @PostMapping("/bookedBook")
     public BookedBook create(@RequestBody BookedBook book) {
+        bookService.addBookedBook(book);
+        return book;
+    }
+
+    @ApiOperation(value = "Create a new book entry")
+    @PostMapping("/addBook")
+    public Book create(@RequestBody Book book) {
         bookService.addBook(book);
         return book;
     }
 
-
-    @ApiOperation(value = "Delete booked book by title")
+    @ApiOperation(value = "Delete reserved book by title for all users")
     @DeleteMapping("/bookedBook/{bookTitle}")
     public void delete(@PathVariable("bookTitle") final String bookTitle) {
         bookService.delete(bookTitle);
@@ -85,19 +89,6 @@ public class BookController {
     @DeleteMapping("/delete-bookedBook")
     public void deleteBookedBook(@RequestBody BookedBook book) {
         bookService.deleteBookedBook(book);
-    }
-
-    // should be removed
-    @ApiOperation(value = "Returns the created book")
-    @PostMapping("/createBook")
-    public String createBook(@RequestBody final String hello) {
-        return hello;
-    }
-
-    @ApiOperation(value = "Returns Hello World")
-    @PutMapping("/put")
-    public String helloPut(@RequestBody final String hello) {
-        return hello;
     }
 }
 

@@ -4,10 +4,7 @@ import com.library_project.Utils;
 import com.library_project.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import javax.annotation.PostConstruct;
@@ -573,7 +570,7 @@ public class BookService {
     }
 
 
-    public void addBook(BookedBook book) {
+    public void addBookedBook(BookedBook book) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -651,7 +648,8 @@ public class BookService {
                 Element product = (Element) products.item(i);
                 Element titleTag = (Element) product.getElementsByTagName("title").item(0);
                 Element userId = (Element) product.getElementsByTagName("user_id").item(0);
-                if (titleTag.getTextContent().equalsIgnoreCase(book.getTitle()) && userId.getTextContent().equalsIgnoreCase(book.getUserId())) {
+                if (titleTag.getTextContent().equalsIgnoreCase(book.getTitle()) &&
+                        userId.getTextContent().equalsIgnoreCase(book.getUserId())) {
                     titleTag.getParentNode().getParentNode().removeChild(products.item(i));
                 }
             }
@@ -661,64 +659,73 @@ public class BookService {
         }
     }
 
-        private static void saveXMLContent(Document document, String xmlFile) {
-            try {
-                TransformerFactory transformerFactory = TransformerFactory.newInstance();
-                Transformer transformer = transformerFactory.newTransformer();
-                transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-                DOMSource domSource = new DOMSource(document);
-                StreamResult streamResult = new StreamResult(xmlFile);
-                transformer.transform(domSource, streamResult);
-            } catch (Exception ex) {
-                System.out.println(ex.getMessage());
-            }
+    private static void saveXMLContent(Document document, String xmlFile) {
+        try {
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            DOMSource domSource = new DOMSource(document);
+            StreamResult streamResult = new StreamResult(xmlFile);
+            transformer.transform(domSource, streamResult);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
+    }
 
-//    public List<Book> addBooks(Book book) {
-//        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//        try {
-//            DocumentBuilder builder = factory.newDocumentBuilder();
-//            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
-//            NodeList books = doc.getElementsByTagName("book");
-//
-//            Element root = doc.getDocumentElement();
-//            NodeList rootElement = doc.getElementsByTagName("books");
-//
-//            Element newUser = rootElement.item(0).getFirstChild().getOwnerDocument().createElement("booked_book");
-//
-//            Element publisher = doc.createElement("publisher");
-//            publisher.appendChild(doc.createTextNode(book.getPublisher()));
-//            newUser.appendChild(publisher);
-//
-//            Element title = doc.createElement("title");
-//            title.appendChild(doc.createTextNode(book.getTitle()));
-//            newUser.appendChild(title);
-//
-//            rootElement.item(0).appendChild(newUser);
-//
-//            DOMSource source = new DOMSource(doc);
-//
-//            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-//            Transformer transformer = transformerFactory.newTransformer();
-//            StreamResult result = new StreamResult(Utils.LIBRARY_XML_PATH);
-//            transformer.transform(source, result);
-//
-//
-//        } catch (ParserConfigurationException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        } catch (SAXException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        } catch (TransformerConfigurationException e) {
-//            e.printStackTrace();
-//        } catch (TransformerException e) {
-//            e.printStackTrace();
-//        }
-//        return ""
-//    }
+    public void addBook(Book book) {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        try {
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.parse(Utils.LIBRARY_XML_PATH);
+            NodeList books = doc.getElementsByTagName("book");
 
+            Element lastElement = (Element) books.item(books.getLength()-1);  // get the last book
+            int lastId = Integer.parseInt(lastElement.getAttribute("id").replaceAll("[^0-9]", ""));  // obtain id
+            String newId = "book" + String.valueOf(lastId+1);
+
+            Element newBook = books.item(0).getFirstChild().getOwnerDocument().createElement("book");
+            newBook.setAttribute("id", newId);
+
+            Element publisher = doc.createElement("publisher");
+            publisher.appendChild(doc.createTextNode(book.getPublisher()));
+            newBook.appendChild(publisher);
+
+            Element title = doc.createElement("title");
+            title.appendChild(doc.createTextNode(book.getTitle()));
+            newBook.appendChild(title);
+
+            Element isbn = doc.createElement("isbn");
+            isbn.appendChild(doc.createTextNode(book.getIsbn()));
+            newBook.appendChild(isbn);
+
+            Element authors = doc.createElement("authors");
+            Element authorId = doc.createElement("id");
+            authorId.appendChild(doc.createTextNode(book.getAuthors().get(0)));
+            authors.appendChild(authorId);
+            newBook.appendChild(authors);
+
+            books.item(0).appendChild(newBook);
+
+            DOMSource source = new DOMSource(doc);
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            StreamResult result = new StreamResult(Utils.LIBRARY_XML_PATH);
+            transformer.transform(source, result);
+
+        } catch (ParserConfigurationException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (SAXException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (TransformerConfigurationException e) {
+            e.printStackTrace();
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
+    }
 }

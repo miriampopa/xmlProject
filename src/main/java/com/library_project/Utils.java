@@ -11,7 +11,7 @@ import org.apache.camel.main.Main;
 
 public class Utils {
 
-    public static final String PROJECT_MAIN_FOLDER = "C:\\Users\\Miriam\\Desktop\\XML\\demo\\src\\main";
+    public static final String PROJECT_MAIN_FOLDER = "C:\\Users\\marin\\Projects\\xml\\xmlProject\\src\\main";
     public static final String RESOURCES_FOLDER = PROJECT_MAIN_FOLDER + "\\resources";
     public static final String LIBRARY_XML_PATH = RESOURCES_FOLDER + "\\library.xml";
     public static final String PROJECT_FOLDER   = PROJECT_MAIN_FOLDER + "\\java\\com\\library_project";
