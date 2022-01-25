@@ -23,6 +23,7 @@ public class UserEndpoint {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getUserRequest")
     @ResponsePayload
     public GetUserResponse getUser(@RequestPayload GetUserRequest request) {
+        int userId = request.getId();
         GetUserResponse response = new GetUserResponse();
         response.setUser(userRepository.findUser(request.getId()));
         return response;

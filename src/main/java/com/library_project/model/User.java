@@ -2,10 +2,25 @@ package com.library_project.model;
 
 import com.library_project.utils.Common;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "user", propOrder = {
+        "id",
+        "user_name",
+        "user_password",
+        "user_email"
+})
 public class User {
     private String id;
+    @XmlElement(required = true)
     private String user_name;
+    @XmlElement(required = true)
     private String user_password;
+    @XmlElement(required = true)
     private String user_email;
 
 //    public User(String username, String password, String email, String id) {

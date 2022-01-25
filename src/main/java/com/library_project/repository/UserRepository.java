@@ -1,10 +1,14 @@
 package com.library_project.repository;
 
-import com.part2.models.soap.user.User;
+import com.library_project.model.User;
+import com.library_project.services.UserService;
+import com.library_project.utils.DataUtils;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.xml.crypto.Data;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,20 +17,10 @@ import java.util.Map;
 @Component
 public class UserRepository {
 
-    private static final Map<Integer, User> emps = new HashMap<>();
-
-    @PostConstruct
-    public void init(){
-        User emp1 = new User();
-        emp1.setId(1);
-        emp1.setUsername("Suzi");
-        emp1.setUserPassword("password");
-        emp1.setUserEmail("suzi@com.innova.com");
-        emps.put(emp1.getId(), emp1);
-    }
+    private static final List<User> users = DataUtils.getUsersMethod();
 
     public User findUser(int id){
-        return emps.get(id);
+        return users.get(id);
     }
 }
 

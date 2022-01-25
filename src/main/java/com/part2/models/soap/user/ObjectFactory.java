@@ -7,6 +7,7 @@ package com.part2.models.soap.user;
 // Generated on: 2022.01.01 at 04:07:02 PM IST
 //
 
+import com.library_project.model.User;
 import javax.xml.bind.annotation.XmlRegistry;
 
 

@@ -29,50 +29,13 @@ public class UserService {
     private List<User> users;
 
     public List<User> findByUserNameOrEmail(String username) {
-
         List<User> result = users
                             .stream()
                             .filter(x -> x.getUsername().equalsIgnoreCase(username))
                             .collect(Collectors.toList());
 
         return result;
-
     }
-    /*public List<User> findByUserNameOrEmail(String username, String email) {
-
-        List<User> result = new ArrayList<User>();
-
-        for (User user : users) {
-
-            if ((!StringUtils.isEmpty(username)) && (!StringUtils.isEmpty(email))) {
-
-                if (username.equals(user.getUsername()) && email.equals(user.getEmail())) {
-                    result.add(user);
-                    continue;
-                } else {
-                    continue;
-                }
-
-            }
-            if (!StringUtils.isEmpty(username)) {
-                if (username.equals(user.getUsername())) {
-                    result.add(user);
-                    continue;
-                }
-            }
-
-            if (!StringUtils.isEmpty(email)) {
-                if (email.equals(user.getEmail())) {
-                    result.add(user);
-                    continue;
-                }
-            }
-
-        }
-
-        return result;
-
-    }*/
 
     // Init some users for testing
     @PostConstruct
@@ -80,7 +43,6 @@ public class UserService {
         users = new ArrayList<User>();
         getAllUsers();
     }
-
 
     public void getAllUsers() {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
